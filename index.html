@@ -11,7 +11,52 @@
       text-align: center;
       background: linear-gradient(to right, #ff9a9e, #fad0c4);
       color: #333;
+      overflow-x: hidden;
     }
+
+    /* -------- Intro Page -------- */
+    #intro {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      z-index: 1000;
+      transition: opacity 1s ease;
+    }
+    #intro h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    #intro button {
+      padding: 15px 25px;
+      font-size: 1.3rem;
+      border: none;
+      border-radius: 10px;
+      background: #fff;
+      color: #d6336c;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    #intro button:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* -------- Main Content -------- */
+    #main {
+      display: none;
+    }
+
     h1 {
       font-size: 3rem;
       margin-top: 30px;
@@ -69,33 +114,55 @@
   </style>
 </head>
 <body>
-  <h1>🎉 Happy Birthday, My Love ❤️</h1>
-  <h2>Dear [Her Name],</h2>
 
-  <div class="message">
-    <p>
-      From the moment we met, my life has been full of joy, laughter, and love.  
-      Today is special because it’s your day! 💕  
-      I wish I could be there with you, but until then, I made this small gift for you.  
-      You mean the world to me, and I love you more than words can say.  
-    </p>
-    <p>— Yours, [Your Name] 💖</p>
+  <!-- Intro Screen -->
+  <div id="intro">
+    <h1>🎉 Welcome to a Special Surprise 🎉</h1>
+    <button onclick="enterSite()">Tap to Enter ❤️</button>
   </div>
 
-  <h2>✨ Our Memories Together ✨</h2>
-  <div class="gallery">
-    <img src="photo1.jpg" alt="Memory 1">
-    <img src="photo2.jpg" alt="Memory 2">
-    <img src="photo3.jpg" alt="Memory 3">
-    <img src="photo4.jpg" alt="Memory 4">
+  <!-- Main Birthday Content -->
+  <div id="main">
+    <h1>🎉 Happy Birthday, My Love ❤️</h1>
+    <h2>Dear [Her Name],</h2>
+
+    <div class="message">
+      <p>
+        From the moment we met, my life has been full of joy, laughter, and love.  
+        Today is special because it’s your day! 💕  
+        I wish I could be there with you, but until then, I made this small gift for you.  
+        You mean the world to me, and I love you more than words can say.  
+      </p>
+      <p>— Yours, [Your Name] 💖</p>
+    </div>
+
+    <h2>✨ Our Memories Together ✨</h2>
+    <div class="gallery">
+      <img src="photo1.jpg" alt="Memory 1">
+      <img src="photo2.jpg" alt="Memory 2">
+      <img src="photo3.jpg" alt="Memory 3">
+      <img src="photo4.jpg" alt="Memory 4">
+    </div>
+
+    <a href="https://www.youtube.com/watch?v=yourloveplaylist" class="btn" target="_blank">
+      🎶 Click for Surprise Song 🎶
+    </a>
+
+    <footer>
+      Made with ❤️ by [Your Name] for [Her Name] | Forever Yours 💕
+    </footer>
   </div>
 
-  <a href="https://www.youtube.com/watch?v=yourloveplaylist" class="btn" target="_blank">
-    🎶 Click for Surprise Song 🎶
-  </a>
-
-  <footer>
-    Made with ❤️ by [Your Name] for [Her Name] | Forever Yours 💕
-  </footer>
+  <script>
+    function enterSite() {
+      const intro = document.getElementById('intro');
+      const main = document.getElementById('main');
+      intro.style.opacity = '0';
+      setTimeout(() => {
+        intro.style.display = 'none';
+        main.style.display = 'block';
+      }, 1000);
+    }
+  </script>
 </body>
 </html>

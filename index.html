@@ -9,17 +9,34 @@
       margin: 0;
       font-family: 'Poppins', sans-serif;
       text-align: center;
-      background: linear-gradient(to right, #ff9a9e, #fad0c4);
-      color: #333;
+      color: white;
       overflow-x: hidden;
+      background: radial-gradient(circle at bottom, #0d1b2a, #000);
+      height: 100vh;
     }
 
-    /* -------- Intro Page -------- */
+    /* Starry background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: transparent url('https://i.ibb.co/z6Y3nVd/stars.png') repeat;
+      animation: twinkle 20s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes twinkle {
+      from { background-position: 0 0; }
+      to { background-position: 1000px 1000px; }
+    }
+
+    /* Intro Page */
     #intro {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      background: linear-gradient(to right, #000428, #004e92);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -29,17 +46,16 @@
       transition: opacity 1s ease;
     }
     #intro h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-bottom: 20px;
-      animation: fadeIn 2s ease-in-out;
     }
     #intro button {
       padding: 15px 25px;
       font-size: 1.3rem;
       border: none;
       border-radius: 10px;
-      background: #fff;
-      color: #d6336c;
+      background: #ffcb05;
+      color: black;
       cursor: pointer;
       transition: transform 0.3s;
     }
@@ -47,81 +63,73 @@
       transform: scale(1.1);
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* -------- Main Content -------- */
-    #main {
-      display: none;
-    }
+    /* Main */
+    #main { display: none; }
 
     h1 {
       font-size: 3rem;
       margin-top: 30px;
-      color: #d6336c;
+      color: #ffcb05;
     }
-    h2 {
-      font-size: 1.5rem;
-      margin: 20px 0;
-    }
+    h2 { font-size: 1.5rem; margin: 20px 0; }
+
     .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
+      display: flex; flex-wrap: wrap;
+      justify-content: center; gap: 15px;
       margin: 20px;
     }
     .gallery img {
-      width: 250px;
-      height: 250px;
+      width: 250px; height: 250px;
       object-fit: cover;
       border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 10px rgba(255,255,255,0.3);
       transition: transform 0.3s;
     }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
+    .gallery img:hover { transform: scale(1.05); }
+
     .message {
-      background: #fff3f5;
-      padding: 20px;
-      margin: 20px;
+      background: rgba(255,255,255,0.1);
+      padding: 20px; margin: 20px;
       border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
     .btn {
-      display: inline-block;
-      margin-top: 20px;
+      display: inline-block; margin-top: 20px;
       padding: 12px 20px;
-      background: #d6336c;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-size: 1.2rem;
-      transition: background 0.3s;
+      background: #ffcb05; color: black;
+      text-decoration: none; border-radius: 10px;
+      font-size: 1.2rem; transition: background 0.3s;
     }
-    .btn:hover {
-      background: #a61e4d;
-    }
+    .btn:hover { background: #ffa500; }
     footer {
-      margin-top: 40px;
-      padding: 10px;
-      font-size: 0.9rem;
-      background: #fff;
+      margin-top: 40px; padding: 10px;
+      font-size: 0.9rem; background: rgba(255,255,255,0.1);
+    }
+
+    /* Floating elements */
+    .floating {
+      position: absolute;
+      font-size: 2.5rem;
+      animation: float 20s linear infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+      10% { opacity: 1; }
+      50% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-120vh) translateX(50px); opacity: 0; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Intro Screen -->
+  <!-- Intro -->
   <div id="intro">
-    <h1>🎉 Welcome to a Special Surprise 🎉</h1>
-    <button onclick="enterSite()">Tap to Enter ❤️</button>
+    <h1>🌌 Welcome to the Starry Birthday Surprise 🌌</h1>
+    <button onclick="enterSite()">🚀 Tap to Enter</button>
   </div>
 
-  <!-- Main Birthday Content -->
+  <!-- Main Content -->
   <div id="main">
     <h1>🎉 Happy Birthday, My Love ❤️</h1>
     <h2>Dear [Her Name],</h2>
@@ -153,6 +161,16 @@
     </footer>
   </div>
 
+  <!-- Floating elements -->
+  <div class="floating" style="left:10%;">🌙</div>
+  <div class="floating" style="left:30%;">🪐</div>
+  <div class="floating" style="left:50%;">🌀</div>
+  <div class="floating" style="left:70%;">🚀</div>
+  <div class="floating" style="left:20%;">🐿️</div>
+  <div class="floating" style="left:40%;">🌻</div>
+  <div class="floating" style="left:60%;">🐒</div>
+  <div class="floating" style="left:80%;">🫏</div>
+
   <script>
     function enterSite() {
       const intro = document.getElementById('intro');
@@ -161,8 +179,20 @@
       setTimeout(() => {
         intro.style.display = 'none';
         main.style.display = 'block';
+        history.pushState({page: "main"}, "Main", "#main");
       }, 1000);
     }
+
+    // Back button handler
+    window.onpopstate = function(event) {
+      if (event.state && event.state.page === "main") {
+        document.getElementById('intro').style.display = 'none';
+        document.getElementById('main').style.display = 'block';
+      } else {
+        document.getElementById('intro').style.display = 'flex';
+        document.getElementById('main').style.display = 'none';
+      }
+    };
   </script>
 </body>
 </html>

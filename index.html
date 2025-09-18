@@ -2,197 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday My Love ❤️</title>
+  <title>Start Page</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-      color: white;
-      overflow-x: hidden;
-      background: radial-gradient(circle at bottom, #0d1b2a, #000);
+      padding: 0;
       height: 100vh;
-    }
-
-    /* Starry background */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: transparent url('https://i.ibb.co/z6Y3nVd/stars.png') repeat;
-      animation: twinkle 20s linear infinite;
-      z-index: -1;
-    }
-
-    @keyframes twinkle {
-      from { background-position: 0 0; }
-      to { background-position: 1000px 1000px; }
-    }
-
-    /* Intro Page */
-    #intro {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(to right, #000428, #004e92);
+      background: url('Gemini_Generated_Image_crxtlcrxtlcrxtlc.png') no-repeat center center fixed;
+      background-size: cover;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      font-family: Arial, sans-serif;
       color: white;
-      z-index: 1000;
-      transition: opacity 1s ease;
+      text-align: center;
     }
-    #intro h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-    #intro button {
-      padding: 15px 25px;
-      font-size: 1.3rem;
-      border: none;
-      border-radius: 10px;
-      background: #ffcb05;
-      color: black;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-    #intro button:hover {
-      transform: scale(1.1);
-    }
-
-    /* Main */
-    #main { display: none; }
-
-    h1 {
-      font-size: 3rem;
-      margin-top: 30px;
-      color: #ffcb05;
-    }
-    h2 { font-size: 1.5rem; margin: 20px 0; }
-
-    .gallery {
-      display: flex; flex-wrap: wrap;
-      justify-content: center; gap: 15px;
-      margin: 20px;
-    }
-    .gallery img {
-      width: 250px; height: 250px;
-      object-fit: cover;
+    .container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(255,255,255,0.3);
-      transition: transform 0.3s;
     }
-    .gallery img:hover { transform: scale(1.05); }
-
-    .message {
-      background: rgba(255,255,255,0.1);
-      padding: 20px; margin: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      font-size: 18px;
+      text-decoration: none;
+      color: white;
+      background: #ff9800;
+      border-radius: 8px;
+      transition: background 0.3s;
     }
-    .btn {
-      display: inline-block; margin-top: 20px;
-      padding: 12px 20px;
-      background: #ffcb05; color: black;
-      text-decoration: none; border-radius: 10px;
-      font-size: 1.2rem; transition: background 0.3s;
-    }
-    .btn:hover { background: #ffa500; }
-    footer {
-      margin-top: 40px; padding: 10px;
-      font-size: 0.9rem; background: rgba(255,255,255,0.1);
-    }
-
-    /* Floating elements */
-    .floating {
-      position: absolute;
-      font-size: 2.5rem;
-      animation: float 20s linear infinite;
-    }
-    @keyframes float {
-      0% { transform: translateY(100vh) translateX(0); opacity: 0; }
-      10% { opacity: 1; }
-      50% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { transform: translateY(-120vh) translateX(50px); opacity: 0; }
+    a:hover {
+      background: #e68900;
     }
   </style>
 </head>
 <body>
-
-  <!-- Intro -->
-  <div id="intro">
-    <h1>🌌 Welcome to the Starry Birthday Surprise 🌌</h1>
-    <button onclick="enterSite()">🚀 Tap to Enter</button>
+  <div class="container">
+    <h1>🌌 Welcome to Niki ka Birthday 🎂</h1>
+    <p>Start karne ke liye button dabao 👇</p>
+    <a href="main.html">Start</a>
   </div>
-
-  <!-- Main Content -->
-  <div id="main">
-    <h1>🎉 Happy Birthday, My Love ❤️</h1>
-    <h2>Dear [Her Name],</h2>
-
-    <div class="message">
-      <p>
-        From the moment we met, my life has been full of joy, laughter, and love.  
-        Today is special because it’s your day! 💕  
-        I wish I could be there with you, but until then, I made this small gift for you.  
-        You mean the world to me, and I love you more than words can say.  
-      </p>
-      <p>— Yours, [Your Name] 💖</p>
-    </div>
-
-    <h2>✨ Our Memories Together ✨</h2>
-    <div class="gallery">
-      <img src="photo1.jpg" alt="Memory 1">
-      <img src="photo2.jpg" alt="Memory 2">
-      <img src="photo3.jpg" alt="Memory 3">
-      <img src="photo4.jpg" alt="Memory 4">
-    </div>
-
-    <a href="https://www.youtube.com/watch?v=yourloveplaylist" class="btn" target="_blank">
-      🎶 Click for Surprise Song 🎶
-    </a>
-
-    <footer>
-      Made with ❤️ by [Your Name] for [Her Name] | Forever Yours 💕
-    </footer>
-  </div>
-
-  <!-- Floating elements -->
-  <div class="floating" style="left:10%;">🌙</div>
-  <div class="floating" style="left:30%;">🪐</div>
-  <div class="floating" style="left:50%;">🌀</div>
-  <div class="floating" style="left:70%;">🚀</div>
-  <div class="floating" style="left:20%;">🐿️</div>
-  <div class="floating" style="left:40%;">🌻</div>
-  <div class="floating" style="left:60%;">🐒</div>
-  <div class="floating" style="left:80%;">🫏</div>
-
-  <script>
-    function enterSite() {
-      const intro = document.getElementById('intro');
-      const main = document.getElementById('main');
-      intro.style.opacity = '0';
-      setTimeout(() => {
-        intro.style.display = 'none';
-        main.style.display = 'block';
-        history.pushState({page: "main"}, "Main", "#main");
-      }, 1000);
-    }
-
-    // Back button handler
-    window.onpopstate = function(event) {
-      if (event.state && event.state.page === "main") {
-        document.getElementById('intro').style.display = 'none';
-        document.getElementById('main').style.display = 'block';
-      } else {
-        document.getElementById('intro').style.display = 'flex';
-        document.getElementById('main').style.display = 'none';
-      }
-    };
-  </script>
 </body>
 </html>

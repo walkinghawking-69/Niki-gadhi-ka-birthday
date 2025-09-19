@@ -1,7 +1,164 @@
 body {
   margin: 0;
-  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: white;
+  overflow-x: hidden;
   height: 100vh;
   background: url('bg.png') no-repeat center center fixed;
   background-size: cover;
+}
+
+/* Intro Page */
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 1000;
+  transition: opacity 1s ease;
+}
+
+#intro h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+#intro button {
+  padding: 15px 25px;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 10px;
+  background: #FFA500; /* Orange color */
+  color: black;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+#intro button:hover {
+  transform: scale(1.1);
+}
+
+/* Main Content */
+#main {
+  display: none;
+}
+
+/* Common style for all headings and texts with glowing effect */
+.glowing-text {
+  text-shadow: 0 0 10px #FFA500, 0 0 20px #FFA500;
+  color: #FFFFFF;
+}
+
+h1.glowing-text {
+  font-size: 3rem;
+  margin-top: 30px;
+}
+
+h2.glowing-text {
+  font-size: 1.5rem;
+  margin: 20px 0;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px;
+}
+
+.gallery img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.message {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 25px;
+  margin: 20px;
+  border-radius: 15px;
+  border: 2px solid #FFA500; /* Orange border */
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.5); /* Orange glow effect */
+  backdrop-filter: blur(10px);
+  transition: all 0.5s ease;
+}
+
+.message p {
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #FFA500; /* Orange button */
+  color: black;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #E89500; /* Darker orange on hover */
+}
+
+footer {
+  margin-top: 40px;
+  padding: 10px;
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.floating {
+  position: absolute;
+  font-size: 2.5rem;
+  animation: float 20s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) translateX(50px);
+    opacity: 0;
+  }
+}
+
+/* Gallery captions ke liye style */
+.photo-caption {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  max-width: 250px; /* Photo ki width se match karega */
+}
+
+.gallery > div {
+  text-align: center;
 }

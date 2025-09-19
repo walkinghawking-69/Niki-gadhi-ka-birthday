@@ -3,196 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday My Love ❤️</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-      color: white;
-      overflow-x: hidden;
-      background: radial-gradient(circle at bottom, #0d1b2a, #000);
-      height: 100vh;
-    }
+  <title>Happy Birthday My Love ❤🪐</title>
 
-    /* Starry background */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: transparent url('https://i.ibb.co/z6Y3nVd/stars.png') repeat;
-      animation: twinkle 20s linear infinite;
-      z-index: -1;
-    }
+  <link rel="stylesheet" href="main.css">
 
-    @keyframes twinkle {
-      from { background-position: 0 0; }
-      to { background-position: 1000px 1000px; }
-    }
-
-    /* Intro Page */
-    #intro {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(to right, #000428, #004e92);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      z-index: 1000;
-      transition: opacity 1s ease;
-    }
-    #intro h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-    #intro button {
-      padding: 15px 25px;
-      font-size: 1.3rem;
-      border: none;
-      border-radius: 10px;
-      background: #ffcb05;
-      color: black;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-    #intro button:hover {
-      transform: scale(1.1);
-    }
-
-    /* Main */
-    #main { display: none; }
-
-    h1 {
-      font-size: 3rem;
-      margin-top: 30px;
-      color: #ffcb05;
-    }
-    h2 { font-size: 1.5rem; margin: 20px 0; }
-
-    .gallery {
-      display: flex; flex-wrap: wrap;
-      justify-content: center; gap: 15px;
-      margin: 20px;
-    }
-    .gallery img {
-      width: 250px; height: 250px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(255,255,255,0.3);
-      transition: transform 0.3s;
-    }
-    .gallery img:hover { transform: scale(1.05); }
-
-    .message {
-      background: rgba(255,255,255,0.1);
-      padding: 20px; margin: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    }
-    .btn {
-      display: inline-block; margin-top: 20px;
-      padding: 12px 20px;
-      background: #ffcb05; color: black;
-      text-decoration: none; border-radius: 10px;
-      font-size: 1.2rem; transition: background 0.3s;
-    }
-    .btn:hover { background: #ffa500; }
-    footer {
-      margin-top: 40px; padding: 10px;
-      font-size: 0.9rem; background: rgba(255,255,255,0.1);
-    }
-
-    /* Floating elements */
-    .floating {
-      position: absolute;
-      font-size: 2.5rem;
-      animation: float 20s linear infinite;
-    }
-    @keyframes float {
-      0% { transform: translateY(100vh) translateX(0); opacity: 0; }
-      10% { opacity: 1; }
-      50% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { transform: translateY(-120vh) translateX(50px); opacity: 0; }
-    }
-  </style>
 </head>
 <body>
 
-  <!-- Intro -->
   <div id="intro">
     <h1>🌌 Welcome to the Starry Birthday Surprise 🌌</h1>
     <button onclick="enterSite()">🚀 Tap to Enter</button>
   </div>
 
-  <!-- Main Content -->
-  <div id="main">
-    <h1>🎉 Happy Birthday, My Love ❤️</h1>
-    <h2>Dear [Her Name],</h2>
+<div id="video-container" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1500; background: black; overflow: hidden;">
+    <video id="surprise-video" width="100%" height="100%" preload="auto" muted playsinline="display:none;">
+        <source src="entervideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+        <button id="skip-btn" style="position: absolute; bottom: 20px; right: 20px; padding: 10px 20px; background: rgba(255, 255, 255, 0.2); color: white; border: 1px solid white; border-radius: 5px; cursor: pointer; backdrop-filter: blur(5px); display: none;">Skip >>></button>
 
-    <div class="message">
-      <p>
-        From the moment we met, my life has been full of joy, laughter, and love.  
-        Today is special because it’s your day! 💕  
-        I wish I could be there with you, but until then, I made this small gift for you.  
-        You mean the world to me, and I love you more than words can say.  
-      </p>
-      <p>— Yours, [Your Name] 💖</p>
-    </div>
 
-    <h2>✨ Our Memories Together ✨</h2>
-    <div class="gallery">
-      <img src="photo1.jpg" alt="Memory 1">
-      <img src="photo2.jpg" alt="Memory 2">
-      <img src="photo3.jpg" alt="Memory 3">
-      <img src="photo4.jpg" alt="Memory 4">
-    </div>
+</div>
+<div id="main">
+  <h1 class="glowing-text">🎉 Happy Birthday, My Love ❤️</h1>
+  <h2 class="glowing-text">Dear Nikki❤,</h2>
 
-    <a href="https://www.youtube.com/watch?v=yourloveplaylist" class="btn" target="_blank">
-      🎶 Click for Surprise Song 🎶
-    </a>
-
-    <footer>
-      Made with ❤️ by [Your Name] for [Her Name] | Forever Yours 💕
-    </footer>
+  <div class="message">
+    <p class="glowing-text">
+      From the moment we met, my life has been full of joy, laughter, and love.  
+      Today is special because it’s your day! 💕  
+      I wish I could be there with you, but until then, I made this small gift for you.  
+      You mean the world to me, and I love you more than words can say.  
+    </p>
+    <p class="glowing-text">— Yours, Gadha ☺ 💖</p>
   </div>
 
-  <!-- Floating elements -->
-  <div class="floating" style="left:10%;">🌙</div>
-  <div class="floating" style="left:30%;">🪐</div>
-  <div class="floating" style="left:50%;">🌀</div>
-  <div class="floating" style="left:70%;">🚀</div>
-  <div class="floating" style="left:20%;">🐿️</div>
-  <div class="floating" style="left:40%;">🌻</div>
-  <div class="floating" style="left:60%;">🐒</div>
-  <div class="floating" style="left:80%;">🫏</div>
+<h2 class="glowing-text">✨ Our Memories Together ✨</h2>
 
-  <script>
+    <button id="show-memories-btn" class="btn">
+        Enter to Memories Together
+    </button>
+
+      <div id="memories-gallery" style="display: none;">
+        <div class="gallery">
+          <div class="message">
+            <img src="bg.png" alt="Memory 1">
+            <p class="glowing-text photo-caption">Ye woh din hai jab humne pehli baar milkar sitaare gine the. ✨</p>
+          </div>
+          <div class="message">
+            <img src="bg.png" alt="Memory 2">
+            <p class="glowing-text photo-caption">Is pal mein, hum dono ek doosre ki aankhon mein poori duniya dekh rahe the. 🥰</p>
+          </div>
+          <div class="message">
+            <img src="bg.png" alt="Memory 3">
+            <p class="glowing-text photo-caption">Woh safar, jab tumhare saath har pal ek khoobsurat yaadon ka hissa ban gaya. 💖</p>
+          </div>
+          <div class="message">
+            <img src="bg.png" alt="Memory 4">
+            <p class="glowing-text photo-caption">Is muskurahat ke peeche ka raaz sirf tum ho. 😊</p>
+          </div>
+        </div>
+      </div>
+
+  <a href="https://www.youtube.com/watch?v=yourloveplaylist" class="btn" target="_blank">
+    🎶 Click for Surprise Song 🎶
+  </a>
+
+  <footer>
+    <span class="glowing-text">Made with ❤️ by Earth🌎 for [Her Name] | Forever Yours 💕</span>
+  </footer>
+</div>
+
+<script>
     function enterSite() {
       const intro = document.getElementById('intro');
       const main = document.getElementById('main');
-      intro.style.opacity = '0';
+      const videoContainer = document.getElementById('video-container');
+      const video = document.getElementById('surprise-video');
+      const skipBtn = document.getElementById('skip-btn');
+
+      // Hide intro and show video container
+      intro.style.display = 'none';
+      videoContainer.style.display = 'block';
+      
+      // Show skip button after a short delay
       setTimeout(() => {
-        intro.style.display = 'none';
+        skipBtn.style.display = 'block';
+      }, 2000); // 2 seconds baad button dikhega
+
+      // Play the video and unmute it
+      video.muted = false;
+      video.play();
+
+      // Video finish hone par ya skip button dabane par
+      function transitionToMain() {
+        video.pause();
+        videoContainer.style.display = 'none';
         main.style.display = 'block';
         history.pushState({page: "main"}, "Main", "#main");
-      }, 1000);
+      }
+
+      video.onended = transitionToMain;
+      skipBtn.addEventListener('click', transitionToMain);
     }
+
+    // Yeh code ab memories button ko chalaega
+    document.getElementById('show-memories-btn').addEventListener('click', function() {
+        document.getElementById('memories-gallery').style.display = 'flex';
+        this.style.display = 'none';
+    });
 
     // Back button handler
     window.onpopstate = function(event) {
-      if (event.state && event.state.page === "main") {
-        document.getElementById('intro').style.display = 'none';
-        document.getElementById('main').style.display = 'block';
-      } else {
-        document.getElementById('intro').style.display = 'flex';
-        document.getElementById('main').style.display = 'none';
-      }
+        if (event.state && event.state.page === "main") {
+            document.getElementById('intro').style.display = 'none';
+            document.getElementById('main').style.display = 'block';
+        } else {
+            document.getElementById('intro').style.display = 'flex';
+            document.getElementById('intro').style.display = 'block';
+            document.getElementById('main').style.display = 'none';
+        }
     };
-  </script>
+</script>
+
 </body>
 </html>
